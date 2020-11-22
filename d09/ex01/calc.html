@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+	<head>
+		<title>calculator</title>
+		<style>
+			body {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: large;
+			}
+		</style>
+		<script>
+			var operator;
+			var	result;
+			function resume_selection()	{
+				document.getElementById("plus").style.fontWeight = 'normal';
+				document.getElementById("minus").style.fontWeight = 'normal';
+				document.getElementById("multiply").style.fontWeight = 'normal';
+				document.getElementById("divide").style.fontWeight = 'normal';
+				document.getElementById("modulo").style.fontWeight = 'normal';
+
+				document.getElementById("plus").style.fontSize = 'large';
+				document.getElementById("minus").style.fontSize = 'large';
+				document.getElementById("multiply").style.fontSize = 'large';
+				document.getElementById("divide").style.fontSize = 'large';
+				document.getElementById("modulo").style.fontSize = 'large';
+			}
+
+			function selectPlus(){
+				operator = '+';
+				resume_selection();
+				document.getElementById("plus").style.fontSize = 'x-large';
+				document.getElementById("plus").style.fontWeight = 'bold';
+			}
+			function selectMinus(){
+				operator = '-';
+				resume_selection();
+				document.getElementById("minus").style.fontSize = 'x-large';
+				document.getElementById("minus").style.fontWeight = 'bold';
+			}
+			function selectMultiply(){
+				operator = '*';
+				resume_selection();
+				document.getElementById("multiply").style.fontSize = 'x-large';
+				document.getElementById("multiply").style.fontWeight = 'bold';
+			}
+			function selectDivide(){
+				operator = '/';
+				resume_selection();
+				document.getElementById("divide").style.fontSize = 'x-large';
+				document.getElementById("divide").style.fontWeight = 'bold';
+			}
+			function selectModulo(){
+				operator = '%';
+				resume_selection();
+				document.getElementById("modulo").style.fontSize = 'x-large';
+				document.getElementById("modulo").style.fontWeight = 'bold';
+			}
+			function calculate(){
+				var left_value = parseInt(document.forms["calc"]["left"].value);
+				var right_value = parseInt(document.forms["calc"]["right"].value);
+				if (left_value < 0 || right_value < 0){
+					alert('Error :(');
+					return;
+				}
+				if (operator === '+') {
+					result = (left_value + right_value);
+				}
+				if (operator === '-') {
+					result = left_value - right_value;
+				}
+				if (operator === '*') {
+					result = left_value * right_value;
+				}
+				if (operator === '/') {
+					if (right_value == 0) {
+						console.log("It's over 9000!");
+						alert("It's over 9000!");
+						return;
+					}
+					result = left_value / right_value;
+				}
+				if (operator === '%') {
+					if (right_value == 0) {
+						console.log("It's over 9000!");
+						alert("It's over 9000!");
+						return;
+					}
+					result = left_value % right_value;
+				}
+				console.log(result.toString());
+				alert(result.toString());
+			}
+			function reminder(){
+				alert('Please, use me...');
+			}
+
+			setInterval(function(){
+   				 reminder()
+			}, 30000)
+
+		</script>
+	</head>
+	<body>
+		<form  method="post" name="calc" onsubmit="return calculate()">
+		<input type="number" id="left" name="left"><br>
+		<table>
+			<tr>
+				<td id="plus" onClick="selectPlus()">+</td>
+				<td id="minus" onClick="selectMinus()">-</td>
+				<td id="multiply" onClick="selectMultiply()">*</td>
+				<td id="divide" onClick="selectDivide()">/</td>
+				<td id="modulo" onClick="selectModulo()">%</td>
+			</tr>
+		</table>
+		<input type="number" id="right" name="right"> <br>
+		<input type="submit" value="Try me!">
+		</form>
+	</body>
+</html>

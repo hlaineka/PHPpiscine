@@ -1,0 +1,16 @@
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles coordinate. Saves attributes _x, _y, _z, _w and _color.
+All of the attributes can be handled with get_*att_name* and set_*att_name.
+
+An instance can be contructed with mandatory values of x, y and z. If w and
+color are not given, they will be set to 1.0 and white respectively. Color
+will always be an instance of the class Color.
+new Vertec( array( 'x' => 1.2345, 'y' => 1.2345, 'z' => 1.2345, 'w' => 1.2345,
+'color' => $color) );
+
+The values for x, y, z and w will be interpreted as floats. 
+
+There are no methods to this class. 
+
+You can use public static verbose to debug when changed to TRUE.
+---------------------------------------------------------------------- Vertex ->

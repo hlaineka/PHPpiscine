@@ -1,0 +1,71 @@
+body {
+	background-color: #505050;
+}
+img{
+	max-width: 100%;
+	max-height: 100%;
+	display: block; /* remove extra space below image */
+}
+.bgimage {
+	object-fit: cover;
+	overflow: hidden;
+	width: auto;
+	height: auto;
+	margin: 0;
+}
+.bgimage img {
+	display:block;
+	width: 1895px;
+	height: 989px;
+	margin: -80px -20px;
+}
+.header {
+	width: 22%;
+	position: absolute;
+	top: 3.2%;
+	left: 12.5%;
+	opacity: 0.2;
+}
+.arrow {
+	width: 62px;
+	position: absolute;
+	top: 138px;
+	left: 262px;
+	/*opacity: 0.5;*/
+}
+.main {
+	width: 62px;
+	position: absolute;
+	top: 205px;
+	left: 262px;
+	/*opacity: 0.5;*/
+}
+.oeil {
+	width: 64px;
+	position: absolute;
+	top: 276px;
+	left: 260px;
+	/*opacity: 0.5;*/
+}
+.outil {
+	width: 63px;
+	position: absolute;
+	top: 343px;
+	left: 262px;
+	/*opacity: 0.5;*/
+}
+.chat {
+	width: 63px;
+	position: absolute;
+	top: 413px;
+	left: 262px;
+	/*opacity: 0.5;*/
+}
+.reload {
+	width: 10px;
+	position: absolute;
+	top: 0px;
+	left: 1600px;
+	opacity: 0.5;
+}
+

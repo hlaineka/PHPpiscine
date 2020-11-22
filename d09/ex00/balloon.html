@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Balloon</title>
+		<style>
+			#balloon {
+				border-radius: 50%;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+		<script>
+			var size = 200;
+			var color = new Array('red', 'green', 'blue');
+			var index = 0;
+			function on_load() {
+				console.debug((toString(size) + "px"));
+				document.getElementById("balloon").style.backgroundColor = color[index];
+				document.getElementById("balloon").style.width = (size.toString() + "px");
+				document.getElementById("balloon").style.height = (size.toString() + "px");
+			}
+			function on_click() {
+				if (size + 10 > 420)
+					size = 200;
+				else 
+					size = size + 10;
+				if (index >= 2)
+					index = 0;
+				else
+					index++;
+				document.getElementById("balloon").style.backgroundColor = color[index];
+				document.getElementById("balloon").style.width = (size.toString() + "px");
+				document.getElementById("balloon").style.height = (size.toString() + "px");
+			}
+			function on_hover() {
+				if (size >= 205)
+					size = size - 5;
+				if (index <= 0)
+					index = 2;
+				else
+					index--;
+				document.getElementById("balloon").style.backgroundColor = color[index];
+				document.getElementById("balloon").style.width = (size.toString() + "px");
+				document.getElementById("balloon").style.height = (size.toString() + "px");
+			}
+		</script>
+	</head>
+	<body onload="on_load()">
+		<div id="balloon" onclick="on_click()" onmouseout="on_hover()"></div>
+	</body>
+</html>

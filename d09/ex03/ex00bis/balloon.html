@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Balloon</title>
+		<style>
+			#balloon {
+				border-radius: 50%;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+			var color = new Array('red', 'green', 'blue');
+			var index = 0;
+			var size = 200;
+	
+			$(document).ready(function(){
+				console.log(color[index]);
+				$("#balloon").css("background-color", color[index]);
+				$("#balloon").css("width", (size.toString() + "px"));
+				$("#balloon").css("height", (size.toString() + "px"));
+
+				$("#balloon").click(function(){
+				if (index >= 2)
+					index = 0;
+				else
+					index++;
+				if (size + 10 > 420)
+					size = 200;
+				else 
+					size = size + 10;
+				$("#balloon").css("background-color", color[index]);
+				$("#balloon").css("width", (size.toString() + "px"));
+				$("#balloon").css("height", (size.toString() + "px"));
+			  });
+			  $("#balloon").mouseleave(function(){
+				if (size >= 205)
+					size = size - 5;
+				if (index <= 0)
+					index = 2;
+				else
+					index--;
+				$("#balloon").css("background-color", color[index]);
+				$("#balloon").css("width", (size.toString() + "px"));
+				$("#balloon").css("height", (size.toString() + "px"));
+			  });
+			});
+		</script>
+	</head>
+	<body>
+		<div id="balloon"></div>
+	</body>
+</html>

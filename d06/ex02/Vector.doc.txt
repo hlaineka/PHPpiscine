@@ -1,0 +1,18 @@
+
+<- Vector ----------------------------------------------------------------------
+The Vector class handles coordinate. 
+
+Saves attributes _x, _y, _z, and _w.
+All of the attributes can be handled with get_*att_name* but not set_*att_name.
+
+The Class’ constructor is expecting an array. The following keysare required:
+’dest’:the vector’s destination vertex, mandatory.
+’orig’:the vector’s origin vertex, optional, by default is worth a new 
+instance of thex=0,y=0,z=0,w=1vertex.
+
+The values for x, y, z and w will be interpreted as floats. 
+
+There are no methods to this class. 
+
+You can use public static verbose to debug when changed to TRUE.
+---------------------------------------------------------------------- Vector ->

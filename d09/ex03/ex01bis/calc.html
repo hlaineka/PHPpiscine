@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+	<head>
+		<title>calculator</title>
+		<style>
+			body {
+				font-family: 'Courier New', Courier, monospace;
+				font-size: large;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+			var operator;
+			var	result;
+	
+			$(document).ready(function(){
+				$("#plus").click(function(){
+					resume_selection();
+					operator = '+';
+					$("#plus").css("font-weight", "bold");
+					$("#plus").css("font-size", "x-large");
+				});
+				$("#minus").click(function(){
+					resume_selection();
+					operator = '-';
+					$("#minus").css('font-weight', 'bold');
+					$("#minus").css('font-size', 'x-large');
+				});
+				$("#multiply").click(function(){
+					resume_selection();
+					operator = '*';
+					$("#multiply").css('font-weight', 'bold');
+					$("#multiply").css('font-size', 'x-large');
+				});
+				$("#divide").click(function(){
+					resume_selection();
+					operator = '/';
+					$("#divide").css('font-weight', 'bold');
+					$("#divide").css('font-size', 'x-large');
+				});
+				$("#modulo").click(function(){
+					resume_selection();
+					operator = '%';
+					$("#modulo").css('font-weight', 'bold');
+					$("#modulo").css('font-size', 'x-large');
+				});
+			 	$("#calc").submit(function(){
+					resume_selection();
+					var left_value = parseInt($("#left").val());
+					var right_value = parseInt($("#right").val());
+				if (left_value < 0 || right_value < 0){
+					alert('Error :(');
+					return;
+				}
+				if (operator === '+') {
+					result = (left_value + right_value);
+				}
+				if (operator === '-') {
+					result = left_value - right_value;
+				}
+				if (operator === '*') {
+					result = left_value * right_value;
+				}
+				if (operator === '/') {
+					if (right_value == 0) {
+						console.log("It's over 9000!");
+						alert("It's over 9000!");
+						return;
+					}
+					result = left_value / right_value;
+				}
+				if (operator === '%') {
+					if (right_value == 0) {
+						console.log("It's over 9000!");
+						alert("It's over 9000!");
+						return;
+					}
+					result = left_value % right_value;
+				}
+				console.log(result.toString());
+				alert(result.toString());
+			  	});
+			});
+
+			function reminder(){
+				alert('Please, use me...');
+			}
+
+			setInterval( reminder, 30000 );
+
+			function resume_selection() {
+				$("#plus").css('font-weight', 'normal');
+				$("#minus").css('font-weight', 'normal');
+				$("#multiply").css('font-weight', 'normal');
+				$("#divide").css('font-weight', 'normal');
+				$("#modulo").css('font-weight', 'normal');
+
+				$("#plus").css('font-size', 'large');
+				$("#minus").css('font-size', 'large');
+				$("#multiply").css('font-size', 'large');
+				$("#divide").css('font-size', 'large');
+				$("#modulo").css('font-size', 'large');
+			}
+		</script>
+	</head>
+	<body>
+		<form  method="post" name="calc" id="calc">
+		<input type="number" id="left" name="left"><br>
+		<table>
+			<tr>
+				<td id="plus">+</td>
+				<td id="minus">-</td>
+				<td id="multiply">*</td>
+				<td id="divide">/</td>
+				<td id="modulo">%</td>
+			</tr>
+		</table>
+		<input type="number" id="right" name="right"> <br>
+		<input type="submit" value="Try me!">
+		</form>
+	</body>
+</html>

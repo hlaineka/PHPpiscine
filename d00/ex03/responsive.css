@@ -1,0 +1,80 @@
+H1 {
+	color: white;
+	text-align: center;
+	font-size: 3vw;
+}
+body {
+	background-image: url(https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjc1MjQyfQ&w=1000&q=80);
+	background-size: cover;
+}
+table{
+	width: 100%;
+}
+th {
+	width: 5%;
+}
+.filled {
+	border: 1px solid white;
+	border-radius: 5px;
+}
+.reactive_nonmetal {
+	background-color: mediumseagreen;
+	border-radius: 5px;
+}
+.alkali_nonmetal {
+	background-color: slategrey;
+	border-radius: 5px;
+}
+.alkali_metal {
+	background-color: cadetblue;
+	border-radius: 5px;
+}
+.metalloid {
+	background-color:teal;
+	border-radius: 5px;
+}
+.noble_gas {
+	background-color: seagreen;
+	border-radius: 5px;
+}
+.post_trans_metal {
+	background-color: lightseagreen;
+	border-radius: 5px;
+}
+.trans_metal {
+	background-color:mediumturquoise;
+	border-radius: 5px;
+}
+.lathanide {
+	background-color: orchid;
+	border-radius: 5px;
+}
+.actinide {
+	background-color: plum;
+	border-radius: 5px;
+}
+.unknown {
+	border-radius: 5px;
+}
+.element {
+	font-family: "Lucida Console", Courier, monospace;
+	color: white;
+	text-align: center;
+	font-size: 1.5vw;
+	font-style: bold;
+}
+.number {
+	font-family: "Lucida Console", Courier, monospace;
+	color: white;
+	text-align: left;
+	font-size: 0.8vw;
+}
+.weight {
+	font-family: "Lucida Console", Courier, monospace;
+	color: white;
+	float: right;
+	font-size: 0.8vw;
+}
+.empty {
+	height: 20px;
+}
